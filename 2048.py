@@ -1,7 +1,7 @@
 import pygame
 import random
 
-# Konstanter
+# constans 
 SCREEN_WIDTH = 400
 SCREEN_HEIGHT = 400
 GRID_SIZE = 4
@@ -20,7 +20,11 @@ TILE_COLORS = {
     512: (237, 200, 80),
     1024: (237, 197, 63),
     2048: (237, 194, 46),
-    # 4096: (128, 0, 128)
+    #4096: (128, 0, 128),
+    #8192: (111, 2, 99),
+    #16384: (100, 10, 110),
+    #32768: (255, 0 , 0),
+    #65536: (0, 10, 100)
 }
 
 # Tile class to represent each tile on the grid
@@ -170,7 +174,7 @@ class Game:
                 if row < GRID_SIZE - 1 and self.grid[row][col] == self.grid[row + 1][col]:  # Check for adjacent tiles with the same value vertically
                     return True
         return False
-
+            
 # Initialize Pygame
 pygame.init()
 
@@ -198,5 +202,5 @@ while running:
                 game.move_up()
             elif event.key == pygame.K_DOWN:
                 game.move_down()
-
+                
 pygame.quit()
